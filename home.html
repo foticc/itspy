@@ -16,8 +16,8 @@
 	<label>{{p.name}}</label>
 	<label>{{p.age}}</label>
 </p>
-<div v-for='s in ss'>
-	<span>{{s.name}}</span>
+<div v-for='(s,key) in ss' :key="s.key">
+	<span>{{s.name}}</span><img v-bind:src="imgurl+key+'.png'" alt="">
 </div>
 </div>
 </body>
@@ -42,6 +42,7 @@
 			name : '',
 			age : 0,
 			ss :[],
+			imgurl : "https://yys.res.netease.com/pc/zt/20161108171335/data/shishen/",
 		},
 		methods:{
 			remove : function() {
